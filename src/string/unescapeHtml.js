@@ -160,7 +160,11 @@ define([], function () {
             }
           }
         }
-        if (IS_DECIMAL.test(value)) {
+
+        // test of &#039;
+        if(targetEntity==="&#039;") {
+            return "'";
+        } else if (IS_DECIMAL.test(value)) {
             value = value.substring(1);
             return String.fromCharCode(+value);
         } else if (IS_HEX.test(value)) {
